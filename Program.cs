@@ -6,8 +6,17 @@ namespace math
     {
         static void Main(string[] args)
         {
-            double[] nums = { 3.2, 4.6, 1.8, 2.1 };
-            Console.WriteLine(StdDev(nums));         
+            Console.WriteLine("Welcome! This program calculates the standard deviation of a sample.");
+            Console.WriteLine("To do this the user, you, must enter the number of values and each value.");
+            Console.WriteLine("How many values do you want to enter? ");
+            int arrayLength = Convert.ToInt32(Console.ReadLine());
+            double[] nums = new double[arrayLength];
+            for ( int index = 0; index < arrayLength; index++ )
+            {   
+                Console.WriteLine("What is the next value you want to enter? ");
+                nums[index] = Convert.ToDouble(Console.ReadLine());
+            }
+            Console.WriteLine("The standard deviation for the sample is " + StdDev(nums));         
         }
 
         static double StdDev(double[] nums)
